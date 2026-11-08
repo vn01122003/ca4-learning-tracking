@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#142b4a">
+  <title>CA4 Study Tracker</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">CA4</div>
+        <div><strong>Study Tracker</strong><small>KẾ HOẠCH ÔN TẬP 12 TUẦN</small></div>
+      </div>
+      <nav class="nav" aria-label="Điều hướng chính">
+        <button class="nav-link active" data-view="overview">▦ <span>Tổng quan</span></button>
+        <button class="nav-link" data-view="weekly">▤ <span>Kế hoạch 12 tuần</span></button>
+        <button class="nav-link" data-view="materials">▧ <span>Nhóm tài liệu A–H</span></button>
+        <button class="nav-link" data-view="knowledge">◫ <span>Năng lực kiến thức</span></button>
+        <button class="nav-link" data-view="errors">☷ <span>Sổ lỗi sai</span></button>
+      </nav>
+      <div class="sidebar-note">
+        <span class="eyebrow">NGUYÊN TẮC</span>
+        <p>Học có mục tiêu · Ôn có chu kỳ · Theo dõi bằng dữ liệu</p>
+      </div>
+      <div class="sidebar-footer">CA4 · PERSONAL STUDY SPACE</div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <div class="eyebrow">KHU VỰC HỌC TẬP</div>
+          <h1 id="page-title">Tổng quan</h1>
+        </div>
+        <div class="topbar-right"><span class="status-dot"></span><span>Dữ liệu lưu trên thiết bị này</span></div>
+      </header>
+
+      <section id="overview" class="view active">
+        <div class="welcome">
+          <div>
+            <span class="eyebrow light">CA4 STUDY TRACKER</span>
+            <h2>Tiến độ được tạo nên<br>từ từng buổi học.</h2>
+            <p>Theo dõi kế hoạch 12 tuần, tài liệu, mức độ nắm vững và những lỗi cần xử lý.</p>
+          </div>
+          <div class="welcome-stamp"><strong>12</strong><span>WEEKS</span><i>84 SESSIONS</i></div>
+        </div>
+
+        <div class="stats-grid">
+          <article class="stat-card"><span>TIẾN ĐỘ TOÀN KẾ HOẠCH</span><strong id="overall-progress">0%</strong><div class="progress-track"><div id="overall-bar" class="progress-fill"></div></div><small id="session-count">0 / 84 buổi hoàn thành</small></article>
+          <article class="stat-card"><span>THỜI GIAN HỌC</span><strong id="study-hours">0h</strong><small>Mục tiêu dự kiến: 252 giờ</small></article>
+          <article class="stat-card"><span>NHÓM TÀI LIỆU</span><strong id="material-count">0/8</strong><small>Nhóm đã hoàn tất</small></article>
+          <article class="stat-card"><span>LỖI CHƯA XỬ LÝ</span><strong id="open-errors">0</strong><small>Cần đưa vào lịch ôn lại</small></article>
+        </div>
+
+        <div class="content-grid">
+          <article class="panel">
+            <div class="panel-heading"><div><span class="eyebrow">LỘ TRÌNH</span><h3>Tiến độ theo giai đoạn</h3></div><button class="text-button" data-goto="weekly">Xem kế hoạch →</button></div>
+            <div id="phase-progress" class="phase-list"></div>
+          </article>
+          <article class="panel today-panel">
+            <div class="panel-heading"><div><span class="eyebrow">NHỊP HỌC MỖI NGÀY</span><h3>Khung 180 phút</h3></div><span class="tag">03:00 H</span></div>
+            <ol class="routine">
+              <li><span>Ôn nội dung buổi trước</span><b>15 phút</b></li>
+              <li><span>Đọc tài liệu mới</span><b>60 phút</b></li>
+              <li><span>Đối chiếu văn bản</span><b>30 phút</b></li>
+              <li><span>Tự tổng hợp / sơ đồ</span><b>35 phút</b></li>
+              <li><span>Làm câu hỏi / tự kiểm tra</span><b>30 phút</b></li>
+              <li><span>Ghi kết quả và lỗi sai</span><b>10 phút</b></li>
+            </ol>
+          </article>
+        </div>
+        <div class="panel principle-panel"><div><span class="eyebrow">TIÊU CHUẨN HOÀN THÀNH</span><h3>Không chỉ đọc xong — phải tự vận dụng được.</h3></div><p>L1 Đã đọc → L2 Giải thích được → L3 Tự tóm tắt → L4 Vận dụng, phân tích → L5 Thành thạo độc lập.</p></div>
+      </section>
+
+      <section id="weekly" class="view">
+        <div class="section-intro"><div><span class="eyebrow">84 BUỔI HỌC · 252 GIỜ</span><h2>Kế hoạch 12 tuần</h2><p>Mỗi tuần gồm 7 buổi. Đánh dấu khi hoàn thành; tiến độ được tự động lưu trên trình duyệt.</p></div><div class="mini-stat"><strong id="weekly-done">0/84</strong><span>BUỔI ĐÃ XONG</span></div></div>
+        <div id="week-list" class="week-list"></div>
+      </section>
+
+      <section id="materials" class="view">
+        <div class="section-intro"><div><span class="eyebrow">DOCUMENT TRACKER</span><h2>Nhóm tài liệu A–H</h2><p>Quản lý trạng thái đọc, tổng hợp và mức độ hoàn thành từng nhóm.</p></div></div>
+        <div id="material-list" class="material-grid"></div>
+      </section>
+
+      <section id="knowledge" class="view">
+        <div class="section-intro"><div><span class="eyebrow">MASTERY TRACKER</span><h2>Năng lực kiến thức</h2><p>Cập nhật cấp độ cao nhất bạn có thể thực hiện độc lập cho từng chủ đề.</p></div></div>
+        <div class="panel">
+          <div class="level-guide">
+            <div><b>L1</b><span>Đã đọc</span></div><div><b>L2</b><span>Giải thích</span></div><div><b>L3</b><span>Tự tóm tắt</span></div><div><b>L4</b><span>Vận dụng</span></div><div><b>L5</b><span>Thành thạo</span></div>
+          </div>
+          <div id="knowledge-list" class="knowledge-list"></div>
+        </div>
+      </section>
+
+      <section id="errors" class="view">
+        <div class="section-intro"><div><span class="eyebrow">REVIEW LOG</span><h2>Sổ lỗi sai</h2><p>Ghi lại câu hỏi sai, nguyên nhân và lịch xử lý để tránh lặp lại.</p></div></div>
+        <form id="error-form" class="panel error-form">
+          <label>Chủ đề<input id="error-topic" required placeholder="Ví dụ: Thẩm quyền ban hành văn bản"></label>
+          <label>Lỗi / nội dung cần xem lại<textarea id="error-note" required rows="3" placeholder="Mình sai ở đâu? Cần kiểm tra lại điều khoản nào?"></textarea></label>
+          <label>Ngày ôn lại<input id="error-date" type="date"></label>
+          <button class="primary-button" type="submit">+ Thêm lỗi cần ôn</button>
+        </form>
+        <div id="error-list" class="error-list"></div>
+      </section>
+
+      <footer class="app-footer">CA4 STUDY TRACKER <span>·</span> Phiên bản tĩnh · Lưu dữ liệu bằng LocalStorage</footer>
+    </main>
+  </div>
+  <script src="js/app.js"></script>
+</body>
+</html>
